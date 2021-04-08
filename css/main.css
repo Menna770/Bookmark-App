@@ -4,7 +4,7 @@ body {font-family: "Akkurat-Light",Helvetica,Arial,"Lucida Grande",sans-serif;}
 
 /* Start Bookmark Form */
 .bookmark-form {
-    background-image: url(../images/form-bg.jpeg);
+    background-image: url(../images/pexels-photo-1111318.jpeg);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -68,20 +68,20 @@ body {font-family: "Akkurat-Light",Helvetica,Arial,"Lucida Grande",sans-serif;}
 
 .bookmark-card .pink-btn:hover .visit-btn {color: #fc46cf}
 
-.bookmark-card .yellow-btn:hover .edit-btn {color: #e1d13c;}
+.bookmark-card .gray-btn:hover .edit-btn {color: #9e9995;}
 /* End Display Table */
 
 
 /* Start Footer */
 footer .footer-content p {
     font-size: 17px;
-    color: #4e4b4b;
+    color: #1a1c29;
 }
 /* End Footer */
 
 
 /* Global Classes */
-.pink-btn, .yellow-btn, .gray-btn {
+.pink-btn, .black-btn, .gray-btn {
     color: #fff;
     transition: all 0.5s;
 }
@@ -96,16 +96,6 @@ footer .footer-content p {
     color: #fc46cf;
 }
 
-.yellow-btn {
-    border: 1px solid #e1d13c;
-    background-color: #e1d13c ;
-}
-
-.yellow-btn:hover {
-    background-color: #fff;
-    color: #e1d13c;
-}
-
 .gray-btn {
     border: 1px solid #9e9995;
     background-color: #9e9995 ;
@@ -114,6 +104,16 @@ footer .footer-content p {
 .gray-btn:hover {
     background-color: #fff;
     color: #9e9995;
+}
+
+.black-btn {
+    border: 1px solid #1a1c29;
+    background-color: #1a1c29 ;
+}
+
+.black-btn:hover {
+    background-color: #fff;
+    color: #1a1c29;
 }
 
 

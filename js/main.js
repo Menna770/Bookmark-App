@@ -6,6 +6,7 @@ var bookmarkName = document.getElementById("bookmark-name"),
     bookmarkCardContainer = document.getElementById("bookmark-card-container"),
     formInputs = document.getElementsByClassName("form-control"),
     searchInput = document.getElementById("search-input"),
+    bookmarkCardHref = document.getElementById("bookmark-card-href"),
     bookmarkArray = [],
     currnetIndex;
 
@@ -20,12 +21,18 @@ if(localStorage.length) {
 addBtn.onclick = function() {
 
     if(bookmarkName.value == '' || bookmarkURL.value == '') {
+        
+        bookmarkCardHref.removeAttribute("href");
         emptyInputAlert.innerHTML = "Please fill in required data !";
     
     } else if(addBtn.innerHTML == "Add Bookmark") {
+            bookmarkCardHref.setAttribute("href", "#bookmark-card");
+            emptyInputAlert.innerHTML = "";
             addBookmark();
         
         } else { 
+            bookmarkCardHref.setAttribute("href", "#bookmark-card");
+            emptyInputAlert.innerHTML = "";
             submitEdit(currnetIndex);
     }
     
@@ -61,10 +68,10 @@ function displayBookmark() {
                         <button class="btn pink-btn">
                             <a target="_blank" class="visit-btn text-decoration-none" href="${bookmarkArray[i].url}"> Visit </a> 
                         </button>
-                        <button class="btn yellow-btn" onclick="editBookmark(${i})">
+                        <button class="btn gray-btn" onclick="editBookmark(${i})">
                             <a class="edit-btn text-decoration-none" href="#to-top"> Edit </a> 
                         </button>
-                        <button class="btn gray-btn" onclick="deleteBookmark(${i})">Delete</button>
+                        <button class="btn black-btn" onclick="deleteBookmark(${i})">Delete</button>
                     </div>
 
                     <div class="clearfix"></div>
@@ -129,10 +136,10 @@ searchInput.onkeyup = function() {
                         <button class="btn pink-btn">
                             <a target="_blank" class="visit-btn text-decoration-none" href="${bookmarkArray[i].url}"> Visit </a> 
                         </button>
-                        <button class="btn yellow-btn">
+                        <button class="btn gray-btn">
                             <a class="edit-btn text-decoration-none" href="#to-top"> Edit </a> 
                         </button>
-                        <button class="btn gray-btn" onclick="deleteBookmark(${i})">Delete</button>
+                        <button class="btn black-btn" onclick="deleteBookmark(${i})">Delete</button>
                     </div>
 
                     <div class="clearfix"></div>
