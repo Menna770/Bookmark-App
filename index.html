@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Bookmark</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=0.1" />
+    <link rel="icon" href="images/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- Start Form -->
+    <section class="bookmark-form" id="to-top">
+      <div class="container">
+        <div class="form-container d-flex justify-content-center">
+          <div class="form w-50 py-5 my-5">
+            <div class="form-head text-center mb-5">
+              <h1>Bookmarker</h1>
+              <p>Bookmark your favorite sites</p>
+            </div>
+
+            <div class="form-group">
+              <label>Site Name</label>
+              <input
+                type="text"
+                id="bookmark-name"
+                class="form-control"
+                placeholder="&#xf02e; &nbsp; Bookmark Name"
+                style="font-family: FontAwesome"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Site URL</label>
+              <input
+                type="text"
+                id="bookmark-url"
+                class="form-control"
+                placeholder="&#xf08d; &nbsp; Bookmark URL"
+                style="font-family: FontAwesome"
+              />
+            </div>
+
+            <div class="form-group text-center mt-5">
+              <p id="empty-input-alert" class="text-danger"></p>
+              <a href="#bookmark-card" class="text-decoration-none">
+                <button class="btn pink-btn" id="add-btn">Add Bookmark</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="to-down-arrow">
+          <a href="#to-down" class="text-decoration-none text-white">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Form -->
+
+    <!-- Start Table -->
+    <section class="display-table pt-5 pb-3" id="to-down">
+      <div class="container">
+        <div class="bookmark-container d-flex justify-content-center">
+          <div class="display-table-body w-50">
+
+            <div class="form-group mb-5">
+              <input type="text" id="search-input" class="form-control" placeholder="&#xf002; &nbsp; Search" style="font-family: FontAwesome"/>
+            </div>
+
+            <div id="bookmark-card-container">
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Table -->
+
+    <!--Start Footrt -->
+    <footer>
+      <div class="container">
+        <div class="footer-content text-center">
+          <hr>
+          <p> CopyRight &copy; 2019 Bookmarker</p>
+        </div>
+      </div>
+    </footer>
+    <!--End Footrt -->
+
+    <!-- To Top Arrow -->
+    <div class="to-top-arrow">
+      <a href="#to-top" class="text-decoration-none text-white">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

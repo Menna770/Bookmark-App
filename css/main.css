@@ -1,0 +1,148 @@
+html {scroll-behavior: smooth;}
+
+body {font-family: "Akkurat-Light",Helvetica,Arial,"Lucida Grande",sans-serif;}
+
+/* Start Bookmark Form */
+.bookmark-form {
+    background-image: url(../images/form-bg.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
+.bookmark-form .form-head h1,
+.bookmark-form .form-head p {color: #fff; text-shadow:  0 0 2px #fff, 0 0 2px #fff;}
+
+.bookmark-form .form-head h1 {font-size: 42px; margin-bottom: 0;}
+
+.bookmark-form .form-head p {font-size: 25px;}
+
+.bookmark-form label {color: #fff; font-size: 20px;}
+
+.form-control::placeholder {color: #9e9995;}
+
+.bookmark-form .to-down-arrow,
+.to-top-arrow {
+    background: #fc46cf;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookmark-form .to-down-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+}
+
+.to-top-arrow {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+/* End Bookmark Form */
+
+
+/* Start Display Table */
+.bookmark-card {
+    margin: 2rem 0;
+    padding: 10px;
+    border-radius: 0.3rem;
+    border: 0.1px solid #ced4da;
+    transition: all 0.5s;
+}
+
+.bookmark-card:hover {
+    background-color: #f5efe5;
+}
+
+.bookmark-card h3 {color: #797474;}
+
+.visit-btn, .edit-btn {color: #fff; transition: all 0.5s;}
+
+.bookmark-card .pink-btn:hover .visit-btn {color: #fc46cf}
+
+.bookmark-card .yellow-btn:hover .edit-btn {color: #e1d13c;}
+/* End Display Table */
+
+
+/* Start Footer */
+footer .footer-content p {
+    font-size: 17px;
+    color: #4e4b4b;
+}
+/* End Footer */
+
+
+/* Global Classes */
+.pink-btn, .yellow-btn, .gray-btn {
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.pink-btn {
+    border: 1px solid #fc46cf;
+    background-color: #fc46cf;
+}
+
+.pink-btn:hover {
+    background-color: #fff;
+    color: #fc46cf;
+}
+
+.yellow-btn {
+    border: 1px solid #e1d13c;
+    background-color: #e1d13c ;
+}
+
+.yellow-btn:hover {
+    background-color: #fff;
+    color: #e1d13c;
+}
+
+.gray-btn {
+    border: 1px solid #9e9995;
+    background-color: #9e9995 ;
+}
+
+.gray-btn:hover {
+    background-color: #fff;
+    color: #9e9995;
+}
+
+
+/* Media Query */
+@media (max-width: 769px)
+{
+    .bookmark-card {text-align: center;}
+
+    .bookmark-card-name,
+    .card-btn {float: none; width: 100%;}
+
+    .bookmark-card-name {margin-bottom: 0.5rem;}
+
+    .bookmark-form .form-head h1 {font-size: 32px;}
+
+    .bookmark-form .form-head p {font-size: 20px;}
+
+    .bookmark-form label {font-size: 16px;}
+
+    .display-table-body, .form {width: 100% !important;}
+
+    .to-top-arrow {
+        width: 30px;
+        height: 30px;;
+    }
+
+    footer .footer-content p {font-size: 15px;}
+}
+
+@media (max-width: 992px) {
+    .display-table-body, .form {width: 80% !important;}
+}
