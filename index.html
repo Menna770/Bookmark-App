@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group">
-              <label>Site Name</label>
+              <label>Site Name</label> <span class="text-danger"> * </span>
               <input
                 type="text"
                 id="bookmark-name"
@@ -33,10 +33,13 @@
                 placeholder="&#xf02e; &nbsp; Bookmark Name"
                 style="font-family: FontAwesome"
               />
+              <div id="bookmarkNameAlert" class="alert alert-danger d-none">
+                BookmarkName must start with capital letter, contains 4:10 characters
+              </div>
             </div>
 
             <div class="form-group">
-              <label>Site URL</label>
+              <label>Site URL</label> <span class="text-danger"> * </span>
               <input
                 type="text"
                 id="bookmark-url"
@@ -44,12 +47,15 @@
                 placeholder="&#xf08d; &nbsp; Bookmark URL"
                 style="font-family: FontAwesome"
               />
+              <div id="bookmarkURLAlert" class="alert alert-danger d-none">
+                Bookmark URL must start with: (www.), then any char and ends with (.com, .org or .net)
+              </div>
             </div>
 
             <div class="form-group text-center mt-5">
               <p id="empty-input-alert" class="text-danger"></p>
               <a href="#bookmark-card" class="text-decoration-none" id="bookmark-card-href">
-                <button class="btn pink-btn" id="add-btn">Add Bookmark</button>
+                <button class="btn pink-btn" id="add-btn" disabled>Add Bookmark</button>
               </a>
             </div>
           </div>
@@ -71,7 +77,7 @@
         <div class="bookmark-container d-flex justify-content-center">
           <div class="display-table-body w-50">
 
-            <div class="form-group mb-5">
+            <div class="form-group mt-3 mb-5">
               <input type="text" id="search-input" class="form-control" placeholder="&#xf002; &nbsp; Search" style="font-family: FontAwesome"/>
             </div>
 

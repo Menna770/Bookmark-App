@@ -7,6 +7,8 @@ var bookmarkName = document.getElementById("bookmark-name"),
     formInputs = document.getElementsByClassName("form-control"),
     searchInput = document.getElementById("search-input"),
     bookmarkCardHref = document.getElementById("bookmark-card-href"),
+    bookmarkNameAlert = document.getElementById("bookmarkNameAlert"),
+    bookmarkURLAlert = document.getElementById("bookmarkURLAlert"),
     bookmarkArray = [],
     currnetIndex;
 
@@ -43,12 +45,15 @@ addBtn.onclick = function() {
 
 //Add Bookmark to Array:
 function addBookmark() {
-    var bookmark =
+    if(validateBookMarkName() == true && validateBookMarkURL() == true)
     {
+        var bookmark =
+        {
         name: bookmarkName.value,
         url : bookmarkURL.value
+        }
+        bookmarkArray.push(bookmark);
     }
-    bookmarkArray.push(bookmark);
 };
 
 //Display Bookmark Card Function:
@@ -87,6 +92,12 @@ function resetForm() {
     {
         formInputs[i].value = ''
     }
+
+    bookmarkName.classList.remove("is-valid");
+    bookmarkName.classList.remove("is-invalid");
+
+    bookmarkURL.classList.remove("is-invalid");
+    bookmarkURL.classList.remove("is-valid");
 };
 
 //Edit Bookmark Function:
@@ -149,3 +160,68 @@ searchInput.onkeyup = function() {
     
     bookmarkCardContainer.innerHTML = bookmarkContainer;
 };
+
+  
+//Validate Bookmark Name Function:
+function validateBookMarkName() {
+    var regex = /^[A-Z][a-z A-z 0-9]{3,9}$/;
+
+    if(regex.test(bookmarkName.value) == true)
+    {
+        bookmarkName.classList.add("is-valid");
+        bookmarkName.classList.remove("is-invalid");
+
+        bookmarkNameAlert.classList.add("d-none");
+        bookmarkNameAlert.classList.remove("d-block");
+
+        addBtn.disabled = false;
+
+        return true;
+    
+    } else {
+        bookmarkName.classList.add("is-invalid");
+        bookmarkName.classList.remove("is-valid");
+
+        bookmarkNameAlert.classList.add("d-block");
+        bookmarkNameAlert.classList.remove("d-none");
+
+        addBtn.disabled = true;
+
+        return false;
+    };
+};
+
+bookmarkName.addEventListener("keyup", validateBookMarkName);
+
+
+//Validate Bookmark URLFunction:
+function validateBookMarkURL() {
+    var regex = /^(www|WWW)\.[a-zA-Z0-9\-\.]+\.(com|Com|net|NET|org|ORG)$/;
+
+    if(regex.test(bookmarkURL.value) == true)
+    {
+        bookmarkURL.classList.add("is-valid");
+        bookmarkURL.classList.remove("is-invalid");
+
+        bookmarkURLAlert.classList.add("d-none");
+        bookmarkURLAlert.classList.remove("d-block");
+
+        addBtn.disabled = false;
+
+        return true;
+   
+    } else {
+        bookmarkURL.classList.add("is-invalid");
+        bookmarkURL.classList.remove("is-valid");
+
+        bookmarkURLAlert.classList.add("d-block");
+        bookmarkURLAlert.classList.remove("d-none");
+
+        addBtn.disabled = true;
+
+        return false;
+    }
+
+};
+
+bookmarkURL.addEventListener("keyup" , validateBookMarkURL);
