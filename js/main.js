@@ -71,10 +71,10 @@ function displayBookmark() {
 
                     <div class="card-btn float-right">
                         <button class="btn pink-btn">
-                            <a target="_blank" class="visit-btn text-decoration-none" href="${bookmarkArray[i].url}"> Visit </a> 
+                            <a href="https://${bookmarkArray[i].url}" target="_blank" class="visit-btn text-decoration-none">Visit</a> 
                         </button>
                         <button class="btn gray-btn" onclick="editBookmark(${i})">
-                            <a class="edit-btn text-decoration-none" href="#to-top"> Edit </a> 
+                            <a class="edit-btn text-decoration-none" href="#to-top">Edit</a> 
                         </button>
                         <button class="btn black-btn" onclick="deleteBookmark(${i})">Delete</button>
                     </div>
@@ -145,10 +145,10 @@ searchInput.onkeyup = function() {
 
                     <div class="card-btn float-right">
                         <button class="btn pink-btn">
-                            <a target="_blank" class="visit-btn text-decoration-none" href="${bookmarkArray[i].url}"> Visit </a> 
+                            <a href="https://${bookmarkArray[i].url}" target="_blank" class="visit-btn text-decoration-none">Visit</a> 
                         </button>
                         <button class="btn gray-btn">
-                            <a class="edit-btn text-decoration-none" href="#to-top"> Edit </a> 
+                            <a class="edit-btn text-decoration-none" href="#to-top">Edit</a> 
                         </button>
                         <button class="btn black-btn" onclick="deleteBookmark(${i})">Delete</button>
                     </div>
@@ -196,7 +196,7 @@ bookmarkName.addEventListener("keyup", validateBookMarkName);
 
 //Validate Bookmark URLFunction:
 function validateBookMarkURL() {
-    var regex = /^(www|WWW)\.[a-zA-Z0-9\-\.]+\.(com|Com|net|NET|org|ORG)$/;
+    var regex = /^(www|WWW|Www)\.[a-zA-Z0-9\-\.]+\.(com|Com|net|NET|org|ORG)$/;
 
     if(regex.test(bookmarkURL.value) == true)
     {
