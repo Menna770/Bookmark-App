@@ -155,13 +155,14 @@ searchInput.onkeyup = function() {
 
                     <div class="clearfix"></div>
                 </div>`
-        }
+        
+            } 
     }
     
     bookmarkCardContainer.innerHTML = bookmarkContainer;
 };
 
-  
+
 //Validate Bookmark Name Function:
 function validateBookMarkName() {
     var regex = /^[A-Z][a-z A-z 0-9]{3,9}$/;
@@ -191,12 +192,33 @@ function validateBookMarkName() {
     };
 };
 
+//Check Duplicated Bookmark Name
+function checkDuplicatedNames() {
+
+    for(var i = 0; i < bookmarkArray.length; i++)
+        {
+          if(bookmarkName.value == bookmarkArray[i].name) 
+          {
+            bookmarkName.classList.add("is-invalid");
+            bookmarkName.classList.remove("is-valid");
+
+            bookmarkNameAlert.classList.add("d-block");
+            bookmarkNameAlert.classList.remove("d-none");
+  
+            bookmarkNameAlert.innerHTML = "Bookmark Name Already Exists";
+  
+            addBtn.disabled = true;
+          } 
+        }
+  };
+
 bookmarkName.addEventListener("keyup", validateBookMarkName);
+bookmarkName.addEventListener("blur", checkDuplicatedNames);
 
 
 //Validate Bookmark URLFunction:
 function validateBookMarkURL() {
-    var regex = /^(www|WWW|Www)\.[a-zA-Z0-9\-\.]+\.(com|Com|net|NET|org|ORG)$/;
+    var regex = /^(www)\.[a-z0-9\-\.]+\.(com|net|org)$/i;
 
     if(regex.test(bookmarkURL.value) == true)
     {
