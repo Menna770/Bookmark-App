@@ -14,7 +14,9 @@ var bookmarkName = document.getElementById("bookmark-name"),
 
 
 //Get data from LocalStorage after refresh:
-if(localStorage.length) {
+if(localStorage.getItem("bookmarkList") == null) {
+    bookmarkArray = [];
+} else {
     bookmarkArray = JSON.parse(localStorage.getItem("bookmarkList"));
     displayBookmark();
 };
